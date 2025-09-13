@@ -14,7 +14,10 @@ class SecurityConfig {
             .csrf { it.disable() } // disable CSRF for dev
             .authorizeHttpRequests { auth ->
                 auth
-                    .requestMatchers("/hello").permitAll() // public endpoint
+                    .requestMatchers(
+                        "/hello",
+                        "/users/register",
+                    ).permitAll() // public endpoint
                     .anyRequest().authenticated() // everything else still secured
             }
             .httpBasic { } // keep basic auth for others

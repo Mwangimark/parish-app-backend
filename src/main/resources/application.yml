@@ -4,6 +4,11 @@ spring:
     username: postgres.ysgnvfnewnofqeslutqj
     password: ubuntu
     driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 5
+      idle-timeout: 30000       # 30 seconds
+      max-lifetime: 60000       # 60 seconds
+      connection-timeout: 20000
 
   jpa:
     hibernate:
