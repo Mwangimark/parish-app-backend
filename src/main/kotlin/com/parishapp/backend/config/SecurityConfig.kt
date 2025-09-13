@@ -17,6 +17,8 @@ class SecurityConfig {
                     .requestMatchers(
                         "/hello",
                         "/users/register",
+                        "/users",
+                        "/users/**"
                     ).permitAll() // public endpoint
                     .anyRequest().authenticated() // everything else still secured
             }
